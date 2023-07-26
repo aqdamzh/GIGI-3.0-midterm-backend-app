@@ -8,7 +8,8 @@ clone repository
 - run `npm run dev` to run with nodemon!
 
 # DB Structure
-![mongoDB-backend-GIGIH](https://github.com/aqdamzh/GIGI-3.0-midterm-backend-app/assets/34984085/67ba667f-bd33-478e-b6b3-d9aad06f3a33)
+![mongoDB-backend-GIGIH](https://github.com/aqdamzh/GIGI-3.0-midterm-backend-app/assets/34984085/61637ba0-673d-48eb-a103-841c3a239e86)
+
 
 
 # API Documentation
@@ -222,7 +223,7 @@ Content-Type: application/json
 ```
 
 ## POST ***/api/videos/:videoId/products***
-  Create a new product based on video.
+  Add a new product based on video.
 * **URL Params**  
   *Required:* `videoId=[String]`
 * **Data Params**  
@@ -351,9 +352,75 @@ Content-Type: application/json
 }
 ```
 
-## GET ***/api/videos/comments***
+## GET ***/api/videos/:videoId/comments***
+  Returns all comments based on the video.
+* **URL Params**  
+  *Required:* `videoId=[String]`
+* **Data Params**  
+  None
+* **Headers**  
+```
+Accept: application/json
+Content-Type: application/json
+``` 
+* **Success Response:**  
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+  Content: 
+```json
+[
+  {
+    "_id": "<ObjectId>",
+    "username": <Username>,
+    "content": "<CommentContent>",
+    "timestamp": "<Timestamp>",
+    "videoId": "<VideoId>"
+  },
+  {
+    "_id": "<ObjectId>",
+    "username": <Username>,
+    "content": "<CommentContent>",
+    "timestamp": "<Timestamp>",
+    "videoId": "<VideoId>"
+  },
+  ...
+]
+```
 
-## POST ***/api/videos/comments***
+## POST ***/api/videos/:videoId/comments***
+  Add a new comment based on video.
+* **URL Params**  
+  *Required:* `videoId=[String]`
+* **Data Params**  
+```json
+{
+  "username": <Username>,
+  "content": "<CommentContent>",
+  "timestamp": "<Timestamp>"
+}
+``` 
+* **Headers**  
+```
+Accept: application/json
+Content-Type: application/json
+``` 
+* **Success Response:**  
+```
+HTTP/1.1 201 CREATED
+Content-Type: application/json
+```
+  Content: 
+```json
+  {
+    "_id": "<ObjectId>",
+    "username": <Username>,
+    "content": "<CommentContent>",
+    "timestamp": "<Timestamp>",
+    "videoId": "<VideoId>"
+  }
+```
 
 ## GET ***/api/videos/comments/:commentId***
 
