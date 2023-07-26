@@ -19,8 +19,8 @@ clone repository
 * [GET /api/videos/:videoId](#get-apivideosvideoid)
 * [PUT /api/videos/:videoId](#put-apivideosvideoid)
 * [DELETE /api/videos/:videoId](#delete-apivideosvideoid)
-* [GET /api/videos/products](#get-apivideosproducts)
-* [POST /api/videos/products](#post-apivideosproducts)
+* [GET /api/videos/:videoId/products](#get-apivideosvideoidproducts)
+* [POST /api/videos/:videoId/products](#post-apivideosvideoidproducts)
 * [GET /api/videos/products/:productId](#get-apivideosproductsproductid)
 * [PUT /api/videos/products/:productId](#put-apivideosproductsproductid)
 * [DELETE /api/videos/products/:productId](#delete-apivideosproductsproductid)
@@ -176,9 +176,79 @@ Content-Type: application/json
 }
 ```
 
-## GET ***/api/videos/products***
+## GET ***/api/videos/:videoId/products***
+  Returns all products based on the video.
+* **URL Params**  
+  *Required:* `videoId=[String]`
+* **Data Params**  
+  None
+* **Headers**  
+```
+Accept: application/json
+Content-Type: application/json
+``` 
+* **Success Response:**  
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+  Content: 
+```json
+[
+  {
+    "_id": "<ObjectId>",
+    "name": "<ProductName>",
+    "price": 1000,
+    "thumbnail": "<ImageLink>",
+    "link": "<ProductLink>",
+    "videoId": "<VideoId>"
+  },
+  {
+    "_id": "<ObjectId>",
+    "name": "<ProductName>",
+    "price": 1000,
+    "thumbnail": "<ImageLink>",
+    "link": "<ProductLink>",
+    "videoId": "<VideoId>"
+  },
+  ...
+]
+```
 
-## POST ***/api/videos/products***
+## POST ***/api/videos/:videoId/products***
+  Create a new product based on video.
+* **URL Params**  
+  *Required:* `videoId=[String]`
+* **Data Params**  
+```json
+{
+  "name": "<ProductName>",
+  "price": 1000,
+  "thumbnail": "<ImageLink>",
+  "link": "<ProductLink>"
+}
+``` 
+* **Headers**  
+```
+Accept: application/json
+Content-Type: application/json
+``` 
+* **Success Response:**  
+```
+HTTP/1.1 201 CREATED
+Content-Type: application/json
+```
+  Content: 
+```json
+{
+  "_id": "<ObjectId>",
+  "name": "<ProductName>",
+  "price": 1000,
+  "thumbnail": "<ImageLink>",
+  "link": "<ProductLink>",
+  "videoId": "<VideoId>"
+}
+```
 
 ## GET ***/api/videos/products/:productId***
 
