@@ -14,8 +14,8 @@ clone repository
 # API Documentation
 <!-- TABLE OF CONTENTS -->
 ## API Table of Contents
-* [GET /api/videos](#get-/api/videos)
-* [POST /api/videos](#post-/api/video)
+* [GET /api/videos](#get-apivideos)
+* [POST /api/videos](#post-apivideo)
 
 ## GET /api/videos
 
