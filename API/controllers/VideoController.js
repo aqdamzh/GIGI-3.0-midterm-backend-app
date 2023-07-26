@@ -25,9 +25,6 @@ class VideoController {
         res.send('Add product to the video');
     }
 
-    static listProductsByVideo(req, res) {
-        res.send('Get all products by video');
-    }
 }
 
 module.exports = VideoController;

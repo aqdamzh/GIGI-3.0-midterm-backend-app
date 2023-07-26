@@ -1,16 +1,16 @@
 
 class ProductController {
 
-    static listProducts(req, res) {
-        res.send('Get all products');
+    static listProductsByVideo(req, res) {
+        res.send('Get all products by video');
     }
 
     static getProduct(req, res) {
         res.send('Get and existing product');
     }
 
-    static createProduct(req, res) {
-        res.send('Create a new product');
+    static addProduct(req ,res) {
+        res.send('Add product to the video');
     }
 
     static updateProduct(req, res) {
