@@ -11,3 +11,12 @@ clone repository
 ![mongoDB-backend-GIGIH](https://github.com/aqdamzh/GIGI-3.0-midterm-backend-app/assets/34984085/67ba667f-bd33-478e-b6b3-d9aad06f3a33)
 
 
+# API Documentation
+<!-- TABLE OF CONTENTS -->
+## API Table of Contents
+* [GET /api/videos](#get-/api/videos)
+* [POST /api/videos](#post-/api/video)
+
+## GET /api/videos
+
+## POST /api/videos
