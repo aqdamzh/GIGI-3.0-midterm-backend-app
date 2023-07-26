@@ -16,10 +16,46 @@ clone repository
 ## API Table of Contents
 * [GET /api/videos](#get-apivideos)
 * [POST /api/videos](#post-apivideos)
-* [GET /api/videos/:videoId](#get-apivideos:videoid)
+* [GET /api/videos/:videoId](#get-apivideosvideoid)
+* [PUT /api/videos/:videoId](#put-apivideosvideoid)
+* [DELETE /api/videos/:videoId](#delete-apivideosvideoid)
+* [GET /api/videos/products](#get-apivideosproducts)
+* [POST /api/videos/products](#post-apivideosproducts)
+* [GET /api/videos/products/:productId](#get-apivideosproductsproductid)
+* [PUT /api/videos/products/:productId](#put-apivideosproductsproductid)
+* [DELETE /api/videos/products/:productId](#delete-apivideosproductsproductid)
+* [GET /api/videos/comments](#get-apivideoscomments)
+* [POST /api/videos/comments](#post-apivideoscomments)
+* [GET /api/videos/comments/:commentId](#get-apivideoscommentscommentid)
+* [PUT /api/videos/comments/:commentId](#put-apivideoscommentscommentid)
+* [DELETE /api/videos/comments/:commentId](#delete-apivideoscommentscommentid)
 
 ## GET /api/videos
 
 ## POST /api/videos
 
 ## GET /api/videos/:videoId
+
+## PUT /api/videos/:videoId
+
+## DELETE /api/videos/:videoId
+
+## GET /api/videos/products
+
+## POST /api/videos/products
+
+## GET /api/videos/products/:productId
+
+## PUT /api/videos/products/:productId
+
+## DELETE /api/videos/products/:productId
+
+## GET /api/videos/comments
+
+## POST /api/videos/comments
+
+## GET /api/videos/comments/:commentId
+
+## PUT /api/videos/comments/:commentId
+
+## DELETE /api/videos/comments/:commentId
