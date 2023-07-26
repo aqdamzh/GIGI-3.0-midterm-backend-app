@@ -102,7 +102,7 @@ Content-Type: application/json
   Return an existing video.
 * **URL Params**  
   *Required:* `videoId=[String]`
-* **Data Params** 
+* **Data Params**  
   None
 * **Headers**  
 ```
@@ -160,7 +160,7 @@ Content-Type: application/json
   Delete an existing video.
 * **URL Params**  
   *Required:* `videoId=[String]`
-* **Data Params** 
+* **Data Params**  
   None
 * **Headers**  
 ```
@@ -174,12 +174,14 @@ Content-Type: application/json
 ```
   Content: 
 ```json
-"status" : "deleted",
-"video": {
-  "_id": "<ObjectId>",
-  "title": "<VideoTitle>",
-  "src": "<VideoLink>",
-  "thumbnail": "<ImageLink>"
+{
+  "status" : "deleted",
+  "video": {
+    "_id": "<ObjectId>",
+    "title": "<VideoTitle>",
+    "src": "<VideoLink>",
+    "thumbnail": "<ImageLink>"
+  }
 }
 ```
 
@@ -327,7 +329,7 @@ Content-Type: application/json
 * **URL Params**  
   *Required:* `videoId=[String]`
    `productId=[String]`
-* **Data Params** 
+* **Data Params**  
   None
 * **Headers**  
 ```
@@ -341,14 +343,16 @@ Content-Type: application/json
 ```
   Content: 
 ```json
-"status" : "deleted",
-"video": {
-  "_id": "<ObjectId>",
-  "name": "<ProductName>",
-  "price": 1000,
-  "thumbnail": "<ImageLink>",
-  "link": "<ProductLink>",
-  "videoId": "<VideoId>"
+{
+  "status" : "deleted",
+  "video": {
+    "_id": "<ObjectId>",
+    "name": "<ProductName>",
+    "price": 1000,
+    "thumbnail": "<ImageLink>",
+    "link": "<ProductLink>",
+    "videoId": "<VideoId>"
+  }
 }
 ```
 
@@ -373,14 +377,14 @@ Content-Type: application/json
 [
   {
     "_id": "<ObjectId>",
-    "username": <Username>,
+    "username": "<Username>",
     "content": "<CommentContent>",
     "timestamp": "<Timestamp>",
     "videoId": "<VideoId>"
   },
   {
     "_id": "<ObjectId>",
-    "username": <Username>,
+    "username": "<Username>",
     "content": "<CommentContent>",
     "timestamp": "<Timestamp>",
     "videoId": "<VideoId>"
@@ -396,9 +400,8 @@ Content-Type: application/json
 * **Data Params**  
 ```json
 {
-  "username": <Username>,
-  "content": "<CommentContent>",
-  "timestamp": "<Timestamp>"
+  "username": "<Username>",
+  "content": "<CommentContent>"
 }
 ``` 
 * **Headers**  
@@ -413,17 +416,103 @@ Content-Type: application/json
 ```
   Content: 
 ```json
-  {
+{
+  "_id": "<ObjectId>",
+  "username": "<Username>",
+  "content": "<CommentContent>",
+  "timestamp": "<Timestamp>",
+  "videoId": "<VideoId>"
+}
+```
+
+## GET ***/api/videos/:videoid/comments/:commentId***
+  Returns an existing comment based on the video.
+* **URL Params**  
+  *Required:* `videoId=[String]`
+   `commentId=[String]`
+* **Data Params**  
+  None
+* **Headers**  
+```
+Accept: application/json
+Content-Type: application/json
+``` 
+* **Success Response:**  
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+  Content: 
+```json
+{
+  "_id": "<ObjectId>",
+  "username": "<Username>",
+  "content": "<CommentContent>",
+  "timestamp": "<Timestamp>",
+  "videoId": "<VideoId>"
+}
+```
+
+## PUT ***/api/videos/:videoId/comments/:commentId***
+  Update an existing comment based on the video.
+* **URL Params**  
+  *Required:* `videoId=[String]`
+   `commentId=[String]`
+* **Data Params**  
+```json
+{
+  "username": "<Username>",
+  "content": "<CommentContent>"
+}
+```
+* **Headers**  
+```
+Accept: application/json
+Content-Type: application/json
+``` 
+* **Success Response:**  
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+  Content: 
+```json
+{
+  "_id": "<ObjectId>",
+  "username": "<Username>",
+  "content": "<CommentContent>",
+  "timestamp": "<Timestamp>",
+  "videoId": "<VideoId>"
+}
+```
+
+## DELETE /api/videos/:videoId/comments/:commentId
+  Delete an existing comment based on the video.
+* **URL Params**  
+  *Required:* `videoId=[String]`
+   `commentId=[String]`
+* **Data Params**  
+  None
+* **Headers**  
+```
+Accept: application/json
+Content-Type: application/json
+``` 
+* **Success Response:**  
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+  Content: 
+```json
+{
+  "status": "deleted",
+  "comment": {
     "_id": "<ObjectId>",
-    "username": <Username>,
+    "username": "<Username>",
     "content": "<CommentContent>",
     "timestamp": "<Timestamp>",
     "videoId": "<VideoId>"
   }
+}
 ```
-
-## GET ***/api/videos/comments/:commentId***
-
-## PUT ***/api/videos/comments/:commentId***
-
-## DELETE /api/videos/comments/:commentId
