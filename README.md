@@ -15,8 +15,11 @@ clone repository
 <!-- TABLE OF CONTENTS -->
 ## API Table of Contents
 * [GET /api/videos](#get-apivideos)
-* [POST /api/videos](#post-apivideo)
+* [POST /api/videos](#post-apivideos)
+* [GET /api/videos/:videoId](#get-apivideos:videoid)
 
 ## GET /api/videos
 
 ## POST /api/videos
+
+## GET /api/videos/:videoId
