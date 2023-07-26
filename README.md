@@ -21,14 +21,14 @@ clone repository
 * [DELETE /api/videos/:videoId](#delete-apivideosvideoid)
 * [GET /api/videos/:videoId/products](#get-apivideosvideoidproducts)
 * [POST /api/videos/:videoId/products](#post-apivideosvideoidproducts)
-* [GET /api/videos/products/:productId](#get-apivideosproductsproductid)
-* [PUT /api/videos/products/:productId](#put-apivideosproductsproductid)
-* [DELETE /api/videos/products/:productId](#delete-apivideosproductsproductid)
-* [GET /api/videos/comments](#get-apivideoscomments)
-* [POST /api/videos/comments](#post-apivideoscomments)
-* [GET /api/videos/comments/:commentId](#get-apivideoscommentscommentid)
-* [PUT /api/videos/comments/:commentId](#put-apivideoscommentscommentid)
-* [DELETE /api/videos/comments/:commentId](#delete-apivideoscommentscommentid)
+* [GET /api/videos/:videoId/products/:productId](#get-apivideosvideoidproductsproductid)
+* [PUT /api/videos/:videoId/products/:productId](#put-apivideosvideoidproductsproductid)
+* [DELETE /api/videos/:videoId/products/:productId](#delete-apivideosvideoidproductsproductid)
+* [GET /api/videos/:videoId/comments](#get-apivideosvideoidcomments)
+* [POST /api/videos/:videoId/comments](#post-apivideosvideoidcomments)
+* [GET /api/videos/:videoId/comments/:commentId](#get-apivideosvideoidcommentscommentid)
+* [PUT /api/videos/:videoId/comments/:commentId](#put-apivideosvideoidcommentscommentid)
+* [DELETE /api/videos/:videoId/comments/:commentId](#delete-apivideosvideoidcommentscommentid)
 
 ## GET /api/videos
   Returns all videos.
@@ -128,7 +128,13 @@ Content-Type: application/json
 * **URL Params**  
   *Required:* `videoId=[String]`
 * **Data Params** 
-  None
+```json
+{
+  "title": "<VideoTitle>",
+  "src": "<VideoLink>",
+  "thumbnail": "<ImageLink>"
+}
+``` 
 * **Headers**  
 ```
 Accept: application/json
@@ -250,11 +256,100 @@ Content-Type: application/json
 }
 ```
 
-## GET ***/api/videos/products/:productId***
+## GET ***/api/videos/:videoId/products/:productId***
+  Returns an existing product based on the video.
+* **URL Params**  
+  *Required:* `videoId=[String]`
+   `productId=[String]`
+* **Data Params**  
+  None
+* **Headers**  
+```
+Accept: application/json
+Content-Type: application/json
+``` 
+* **Success Response:**  
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+  Content: 
+```json
+{
+  "_id": "<ObjectId>",
+  "name": "<ProductName>",
+  "price": 1000,
+  "thumbnail": "<ImageLink>",
+  "link": "<ProductLink>",
+  "videoId": "<VideoId>"
+}
+```
 
-## PUT ***/api/videos/products/:productId***
+## PUT ***/api/videos/:videoId/products/:productId***
+  Update an existing product based on the video.
+* **URL Params**  
+  *Required:* `videoId=[String]`
+   `productId=[String]`
+* **Data Params** 
+```json
+{
+  "name": "<ProductName>",
+  "price": 1000,
+  "thumbnail": "<ImageLink>",
+  "link": "<ProductLink>"
+}
+``` 
+* **Headers**  
+```
+Accept: application/json
+Content-Type: application/json
+``` 
+* **Success Response:**  
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+  Content: 
+```json
+{
+  "_id": "<ObjectId>",
+  "name": "<ProductName>",
+  "price": 1000,
+  "thumbnail": "<ImageLink>",
+  "link": "<ProductLink>",
+  "videoId": "<VideoId>"
+}
+```
 
-## DELETE ***/api/videos/products/:productId***
+## DELETE ***/api/videos/:videoId/products/:productId***
+  Delete an existing product based on the video.
+* **URL Params**  
+  *Required:* `videoId=[String]`
+   `productId=[String]`
+* **Data Params** 
+  None
+* **Headers**  
+```
+Accept: application/json
+Content-Type: application/json
+``` 
+* **Success Response:**  
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+  Content: 
+```json
+"status" : "deleted",
+"video": {
+  "_id": "<ObjectId>",
+  "name": "<ProductName>",
+  "price": 1000,
+  "thumbnail": "<ImageLink>",
+  "link": "<ProductLink>",
+  "videoId": "<VideoId>"
+}
+```
 
 ## GET ***/api/videos/comments***
 
