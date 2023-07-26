@@ -13,7 +13,7 @@ router.delete('/:videoId', VideoController.deleteVideo);
 router.get('/:videoId/products', VideoController.listProductsByVideo);
 router.post('/:videoId/products/:productId', VideoController.addProduct);
 
-router.get('/:videoId/comments', CommentController.listComments);
+router.get('/:videoId/comments', CommentController.listCommentsByVideo);
 router.get('/:videoId/comments/:commentId', CommentController.getComment);
 router.post('/:videoId/comments', CommentController.createComment);
 router.put('/:videoId/comments/:commentId', CommentController.updateComment);

@@ -1,7 +1,7 @@
 
 class CommentController {
 
-    static listComments(req, res) {
+    static listCommentsByVideo(req, res) {
         res.send('Get all comments');
     }
 
