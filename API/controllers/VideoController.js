@@ -1,8 +1,14 @@
+const Video = require('../models/Video');
 
 class VideoController {
 
-    static listVideos(req, res) {
-        res.send('Get all videos');
+    static async listVideos(req, res) {
+        try {
+            const videos = await Video.find();
+            res.json(videos);
+        } catch (error) {
+            res.status(500).json({message: error.message});
+        }
     }
 
     static getVideo(req, res) {

@@ -1,6 +1,18 @@
+const mongoose = require('mongoose');
 
-class Video {
-    //TODO
-}
+const videoSchema = new mongoose.Schema({
+    title: {
+        required: true,
+        type: String
+    },
+    src: {
+        required: true,
+        type: String
+    },
+    thumbnail: {
+        required: true,
+        type: String
+    }
+});
 
-module.exports = Video;
+module.exports = mongoose.model('Videos', videoSchema);
