@@ -1,8 +1,15 @@
+const Product = require('../models/Product');
 
 class ProductController {
 
-    static listProductsByVideo(req, res) {
-        res.send('Get all products by video');
+    static async listProductsByVideo(req, res) {
+        try {
+            const videoId = req.params.videoId;
+            const products = await Product.find({videoId: videoId});
+            res.json(products);
+        } catch (error) {
+            res.status(500).json({message: error.message});
+        }
     }
 
     static getProduct(req, res) {

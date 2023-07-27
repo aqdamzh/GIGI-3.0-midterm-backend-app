@@ -1,6 +1,26 @@
+const mongoose = require('mongoose');
 
-class Product {
-    //TODO
-}
+const productScema = new mongoose.Schema({
+    name: {
+        required: true,
+        type: String
+    },
+    price: {
+        required: true,
+        type: Number
+    },
+    thumbnail: {
+        required: true,
+        type: String
+    },
+    link: {
+        required: true,
+        type: String
+    },
+    videoId: {
+        required:true,
+        type: mongoose.ObjectId
+    }
+});
 
-module.exports = Product;
+module.exports = mongoose.model('products', productScema);
