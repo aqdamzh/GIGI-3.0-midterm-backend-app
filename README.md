@@ -598,11 +598,14 @@ Content-Type: application/json
   Content: 
 ```json
 {
-  "_id": "<ObjectId>",
-  "username": "<Username>",
-  "content": "<CommentContent>",
-  "timestamp": "<Timestamp>",
-  "videoId": "<VideoId>"
+    status: "success",
+    comment: {
+      "_id": "<ObjectId>",
+      "username": "<Username>",
+      "content": "<CommentContent>",
+      "timestamp": "<Timestamp>",
+      "videoId": "<VideoId>"
+    }
 }
 ```
 
