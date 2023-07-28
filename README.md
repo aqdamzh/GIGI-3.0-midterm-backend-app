@@ -3,13 +3,13 @@
 clone repository
 
 ### MongoDB Setup
-Use initdb.js file to init database and populate data.
+Use `initdb.js` file to init database and populate data.
 <details>
 <summary>Example using MongoDB shell</summary>
 <br>
 copy and paste the code to MongoDB shell.
 <br><br>
-
+    
 ```javascript
 db.videos.insertMany(
     [
@@ -177,7 +177,28 @@ db.products.insertMany(
       ]
 );
 
-
+db.comments.insertMany(
+    [
+        {
+          "username": "sibejo",
+          "content": "Semoga indonesia bebas korupsi",
+          "timestamp": new Date("2023/07/28"),
+          "videoId": myVideos[4]._id
+        },
+        {
+          "username": "usergigih",
+          "content": "Very inspiring",
+          "timestamp": new Date("2023/07/27"),
+          "videoId": myVideos[0]._id
+        },
+        {
+          "username": "si_gigih",
+          "content": "Interesting and wonderful",
+          "timestamp": new Date("2023/07/27"),
+          "videoId": myVideos[0]._id
+        }
+    ]
+);
 ```
 </details>
 
