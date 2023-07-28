@@ -30,13 +30,7 @@ class VideoController {
 
         try {
             const videoSave = await newVideo.save();
-            const {_id , title, src, thumbnail} = videoSave;
-            res.status(201).json({
-                _id: _id,
-                title: title,
-                src: src,
-                thumbnail: thumbnail
-            });
+            res.status(201).json(videoSave);
         } catch (error) {
             res.status(400).json({message: error.message});
         }
