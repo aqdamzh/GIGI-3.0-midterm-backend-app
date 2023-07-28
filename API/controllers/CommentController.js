@@ -1,8 +1,12 @@
+const Comment = require('../models/Comment');
 
 class CommentController {
 
-    static listCommentsByVideo(req, res) {
-        res.send('Get all comments');
+    static async listCommentsByVideo(req, res) {
+        const videoId = req.params.videoId;
+        
+        const comments = await Comment.find({videoId: videoId});
+        res.json(comments);
     }
 
     static getComment(req, res) {

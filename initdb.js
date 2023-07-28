@@ -164,3 +164,26 @@ db.products.insertMany(
       ]
 );
 
+db.comments.insertMany(
+    [
+        {
+          "username": "sibejo",
+          "content": "Semoga indonesia bebas korupsi",
+          "timestamp": new Date("2023/07/28"),
+          "videoId": myVideos[4]._id
+        },
+        {
+          "username": "usergigih",
+          "content": "Very inspiring",
+          "timestamp": new Date("2023/07/27"),
+          "videoId": myVideos[0]._id
+        },
+        {
+          "username": "si_gigih",
+          "content": "Interesting and wonderful",
+          "timestamp": new Date("2023/07/27"),
+          "videoId": myVideos[0]._id
+        }
+    ]
+);
+
