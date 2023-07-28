@@ -598,8 +598,8 @@ Content-Type: application/json
   Content: 
 ```json
 {
-    status: "success",
-    comment: {
+    "status": "success",
+    "comment": {
       "_id": "<ObjectId>",
       "username": "<Username>",
       "content": "<CommentContent>",
